@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TM2S TP - Terrassement & Démolition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #111827;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #60a5fa;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .button {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <h1>TM2S TP</h1>
+    <p>Experts en Terrassement, Démolition et Aménagement Extérieur</p>
+  </header>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#apropos">A propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="services">
+    <h2>Nos Services</h2>
+    <div class="card"> <h3>Terrassement</h3><p>Préparation de terrain, creusement, nivellement pour constructions et aménagements.</p></div>
+    <div class="card"> <h3>Démolition</h3><p>Déconstruction sécurisée de bâtiments, murs, dalles, et structures diverses.</p></div>
+    <div class="card"> <h3>Assainissement</h3><p>Installation de fosses septiques, filtrations compactes et réseaux d'assainissement.</p></div>
+  </section>
+
+  <section id="realisations">
+    <h2>Réalisations Récentes</h2>
+    <div class="card"> <p>Aménagement d'une cour en pavés à Coutances, pose de muret en gabions, finition en gravier.</p></div>
+    <div class="card"> <p>Terrassement complet pour installation de piscine 8x4m avec dalle béton préparatoire.</p></div>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos de TM2S TP</h2>
+    <div class="card"> <p>Basés à Coutances, nous intervenons dans un rayon de 20 km pour offrir des prestations de qualité, durables et adaptées aux besoins de chaque client, particulier ou professionnel.</p></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>📍 Zone de la Mare, rue Colbert, 50200 Coutances</p>
+      <p>📞 Téléphone : 06 00 00 00 00</p>
+      <p>📧 Email : contact@tm2stp.fr</p>
+      <a href="#" class="button">Demander un devis</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TM2S TP - Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Scroll animation for .card elements
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
